@@ -6,20 +6,17 @@ import {
     Route,
     Redirect
 } from "react-router-dom";
+import {CompareScreen, HomeScreen} from "../screens";
 
 export const AppRoute: React.FC = () => {
     return (
         <Router>
             <Switch>
                 <Route exact path={'/'}>
-                    <div>
-                        <h1>Home</h1>
-                    </div>
+                    <HomeScreen/>
                 </Route>
-                <Route exact path={'/compare/a/:idA/b/:idb'}>
-                    <div>
-                        <h1>Compare</h1>
-                    </div>
+                <Route exact path={'/compare/a/:idA/b/:idB'}>
+                    <CompareScreen/>
                 </Route>
                 <Route>
                     <Redirect to={'/'}/>
