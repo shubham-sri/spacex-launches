@@ -1,6 +1,7 @@
 import React from 'react';
 import {ApolloProvider} from "@apollo/client";
 import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {GRAPHQL_CLIENT} from "./config";
 import {AppRoute} from "./routes";
@@ -9,8 +10,10 @@ import './App.css'
 
 function App() {
   return (
-      <ApolloProvider client={GRAPHQL_CLIENT}>
-          <AppRoute/>
+      <div>
+          <ApolloProvider client={GRAPHQL_CLIENT}>
+              <AppRoute/>
+          </ApolloProvider>
           <ToastContainer
               position="top-right"
               autoClose={5000}
@@ -22,7 +25,7 @@ function App() {
               draggable
               pauseOnHover
           />
-      </ApolloProvider>
+      </div>
   );
 }
 

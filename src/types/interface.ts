@@ -1,48 +1,48 @@
-interface LaunchSite {
+export interface LaunchSite {
     site_name_long: string
 }
 
-interface Links {
+export interface Links {
     wikipedia: string
 }
 
-interface Core {
+export interface Core {
     reuse_count: 6
     status: string
 }
 
-interface Cores {
+export interface Cores {
     flight: number
     core: Core
 }
 
-interface FirstStage {
+export interface FirstStage {
     cores: Array<Cores>
 }
 
-interface Payloads {
+export interface Payloads {
     payload_type: string
     payload_mass_kg: number
     payload_mass_lbs: number
 }
 
-interface SecondStage {
+export interface SecondStage {
     payloads: Array<Payloads>
 }
 
-interface Rocket {
+export interface Rocket {
     rocket_name: string
     first_stage: FirstStage
     second_stage: SecondStage
 }
 
-interface Ship {
+export interface Ship {
     name: string
     home_port: string
     image: string
 }
 
-interface Launch {
+export interface Launch {
     id: string
     mission_name: string
     launch_date_local: string
@@ -54,10 +54,10 @@ interface Launch {
 }
 
 export interface LaunchesPastData {
-    launchesPast: []
+    launchesPast: Array<Launch>
 }
 
-interface FindVariables {
+export interface FindVariables {
     rocket_name?: string
     mission_name?: string
 }
@@ -66,4 +66,12 @@ export interface LaunchesPastVariables {
     find?: FindVariables,
     limit?: number,
     offset?: number
+}
+
+export interface LaunchData {
+    launch: Launch
+}
+
+export interface LaunchVariables {
+    id: string
 }
